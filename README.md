@@ -84,6 +84,7 @@ Le routeur joue un rôle clé :
 * **MPTCP**
 * **Machines virtuelles**
 * **eBPF**
+* **TCP/IP**
 * Bash / scripts réseau
 * Outils de capture et d’analyse réseau (Wireshark...)
 
