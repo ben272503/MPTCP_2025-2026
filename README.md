@@ -109,7 +109,6 @@ Le routeur joue un rôle clé :
 * Benjamin EMEREAU
 * Corentin VIGAN
 * Mattis LELIÈVRE
-* *[Ton nom]*
 
 ---
 
