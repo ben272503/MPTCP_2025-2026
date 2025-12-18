@@ -1,2 +1,138 @@
-# MPTCP_2025-2026
-Implémentation de MPTCP sur machine virtuelle et opération réseaux-cyber-machine
+# 🚀 MPTCP_2025–2026
+
+## Implémentation et analyse de Multipath TCP (MPTCP)
+
+---
+
+## 📌 Présentation du projet
+
+Ce dépôt présente un **projet académique et technique** centré sur l’implémentation, l’analyse et la sécurisation du protocole **Multipath TCP (MPTCP)** dans un environnement virtualisé Linux.
+
+Le projet consiste à **implémenter un noyau Linux intégrant MPTCP**, distinct de celui proposé nativement dans les versions récentes de Linux, puis à analyser les différences de comportement entre **TCP classique et MPTCP** dans un scénario réseau réaliste.
+
+Ce travail s’inscrit dans le cadre du **"Projet Métier"** de l’ESAIP en 5ème année d'école d'ingénieur.
+
+---
+
+## 🎯 Objectifs du projet
+
+* Comprendre le fonctionnement interne du protocole **MPTCP**
+* Compiler et déployer un **noyau Linux MPTCP custom** sur machine virtuelle
+* Comparer les flux **TCP vs MPTCP**
+* Observer le trafic réseau et le comportement protocolaire
+* Étudier les aspects **réseaux, cyber et performance**
+* Mettre en place des **attaques ciblant MPTCP**
+* Développer des **mécanismes de défense réseau**
+
+---
+
+## 🧱 Architecture du projet
+
+Le projet repose sur une architecture en **trois machines virtuelles** :
+
+* 🖥️ **Client** : génère des flux TCP et MPTCP
+* 🌐 **Routeur** : point central d’observation et de contrôle
+* 🗄️ **Serveur** : destination des flux réseau
+
+### Rôle du routeur
+
+Le routeur joue un rôle clé :
+
+* Observation du trafic MPTCP via **eBPF**
+* Analyse des sous-flux
+* Détection de comportements anormaux
+* Application de règles de défense (coupure de routes, filtrage, etc.)
+
+---
+
+## ⚙️ Travaux réalisés
+
+### 🔹 Implémentation système
+
+* Compilation d’un **noyau Linux intégrant MPTCP**
+* Déploiement sur machine virtuelle
+* Configuration du boot sur le noyau MPTCP
+[📄 Ouvrir le rapport PDF](docs/rapport_mptcp.pdf)
+### 🔹 Expérimentations réseau
+
+* Échanges TCP classiques
+* Échanges MPTCP
+* Analyse comparative (latence, résilience, chemins multiples)
+[📄 Ouvrir le rapport PDF](docs/rapport_mptcp.pdf)
+### 🔹 Observation & analyse
+
+* Capture et analyse de trafic réseau
+* Observation des flux MPTCP
+* Instrumentation du routeur avec **eBPF**
+
+### 🔹 Sécurité
+
+* Scripts d’attaque ciblant MPTCP
+* Scénarios de dégradation réseau
+* Scripts de défense :
+
+  * Coupure de routes
+  * Désactivation de sous-flux
+  * Réactions dynamiques côté routeur
+
+---
+
+## 🛠️ Technologies & outils utilisés
+
+* **Linux** (noyau custom)
+* **MPTCP**
+* **Machines virtuelles**
+* **eBPF**
+* **TCP / IP**
+* Bash / scripts réseau
+* Outils de capture et d’analyse réseau
+
+---
+
+## 📊 Résultats attendus
+
+* Mise en évidence des différences entre TCP et MPTCP
+* Analyse de la résilience de MPTCP face aux coupures de chemins
+* Observation du comportement protocolaire via eBPF
+* Évaluation de scénarios d’attaque et de défense
+
+---
+
+## 🎓 Contexte académique
+
+* **École :** ESAIP
+* **Nom du projet :** Projet Métier
+* **Encadrant :** Mohammed BENCHEIKH (enseignant-chercheur sur le sujet)
+
+### 👥 Équipe projet
+
+* Benjamin EMEREAU
+* Corentin VIGAN
+* Mattis LELIÈVRE
+* *[Ton nom]*
+
+---
+
+## 📂 Structure du dépôt (à venir)
+
+```text
+MPTCP_2025-2026/
+├── docs/           # Documentation, analyses, rapports
+├── kernel/         # Configuration et build du noyau MPTCP
+├── scripts/        # Scripts d’attaque et de défense
+├── ebpf/           # Programmes eBPF
+├── topology/       # Schémas et configurations réseau
+└── README.md
+```
+
+---
+
+## ⚠️ Avertissement
+
+Ce projet est réalisé **à des fins pédagogiques et de recherche**. Les scripts d’attaque sont utilisés uniquement dans un environnement contrôlé.
+
+---
+
+## ✍️ Auteur
+
+Projet réalisé dans le cadre académique de l’ESAIP – 2025–2026.
