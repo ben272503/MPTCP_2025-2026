@@ -1,6 +1,7 @@
 # 🚀 MPTCP_2025–2026
 
 ## Implémentation et analyse de Multipath TCP (MPTCP)
+🇫🇷 Français | [🇬🇧 English](README_EN.md)
 
 ---
 
