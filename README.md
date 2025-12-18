@@ -45,7 +45,7 @@ Le routeur joue un rôle clé :
 
 ---
 
-## ⚙️ Travaux réalisés
+## ⚙️ Travaux réalisés - Section à modifier ⚠️
 
 ### 🔹 Implémentation système
 
@@ -79,13 +79,12 @@ Le routeur joue un rôle clé :
 
 ## 🛠️ Technologies & outils utilisés
 
-* **Linux** (noyau custom)
+* **Linux** Ubuntu 22 LTS
 * **MPTCP**
 * **Machines virtuelles**
 * **eBPF**
-* **TCP / IP**
 * Bash / scripts réseau
-* Outils de capture et d’analyse réseau
+* Outils de capture et d’analyse réseau (Wireshark...)
 
 ---
 
