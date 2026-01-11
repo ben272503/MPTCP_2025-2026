@@ -2,7 +2,7 @@
 Ce document détaille la configuration réseau permettant la communication multi-chemins entre le Client et le Serveur via le Routeur.
 
 ## 1. Architecture du Réseau
-![Topologie du réseau MPTCP](../images/MPCTP_Full_Topology.png)
+[📄 Ouvrir La topologie complete en PDF](Description_de_la_Topologie_Réseau_MPTCP.pdf)
 
 
 
