@@ -1,0 +1,22 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    # Interface d'administration
+    enp7s0:
+      dhcp4: true
+      dhcp4-overrides:
+        use-routes: false # Empêche cette interface de polluer la table de routage
+
+    # ----------------------------------------------------
+    # CHEMINS MPTCP (Côté CLIENT: 10.0.X.10)
+    # ----------------------------------------------------
+    # Interfaces MPTCP
+    eth0:
+      [cite_start]addresses: [10.0.1.10/24] # 
+    eth1:
+      [cite_start]addresses: [10.0.2.10/24] # 
+    eth2:
+      [cite_start]addresses: [10.0.3.10/24] # 
+    eth3:
+      [cite_start]addresses: [10.0.4.10/24] #

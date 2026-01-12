@@ -1,0 +1,47 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    # ----------------------------------------------------
+    # INTERFACE D'ADMINISTRATION (enp7s0)
+    # Reste en DHCP, mais SANS GATEWAY par défaut pour éviter de polluer le routage MPTCP.
+    # On la laisse de côté pour éviter de casser l'accès à internet/l'hôte
+    # ----------------------------------------------------
+    enp7s0:
+      dhcp4: true
+      routes:
+        - to: 0.0.0.0/0
+          via: 192.168.122.1  # Gateway par défaut du NAT
+          metric: 1000        # Haute métrique pour qu'elle soit ignorée
+
+    # ----------------------------------------------------
+    # CHEMINS MPTCP (Côté CLIENT: 10.0.X.1)
+    # ----------------------------------------------------
+    enp1s0:
+      dhcp4: no
+      addresses: [10.0.1.1/24] # Chemin 1 Client
+    enp8s0:
+      dhcp4: no
+      addresses: [10.0.2.1/24] # Chemin 2 Client
+    enp9s0:
+      dhcp4: no
+      addresses: [10.0.3.1/24] # Chemin 3 Client
+    enp10s0:
+      dhcp4: no
+      addresses: [10.0.4.1/24] # Chemin 4 Client
+
+    # ----------------------------------------------------
+    # CHEMINS MPTCP (Côté SERVEUR: 192.168.X.1)
+    # ----------------------------------------------------
+    enp11s0:
+      dhcp4: no
+      addresses: [192.168.1.1/24] # Chemin 1 Serveur
+    enp12s0:
+      dhcp4: no
+      addresses: [192.168.2.1/24] # Chemin 2 Serveur
+    enp13s0:
+      dhcp4: no
+      addresses: [192.168.3.1/24] # Chemin 3 Serveur
+    enp14s0:
+      dhcp4: no
+      addresses: [192.168.4.1/24] # Chemin 4 Serveur
