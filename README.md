@@ -54,7 +54,7 @@ Nous avons établi un état de l'art du MPTCP pour se renseigner sur ce qu'étai
 
 Voici un résumé rapide de ce qu'es le MPTCP et ce qu'il permet de faire:
 
-Section à modifier ⚠️
+## Section à modifier ⚠️
 
 Pour plus de détail: *[📶 état de l'art complet](doc/etat_d-art.md)*
 
