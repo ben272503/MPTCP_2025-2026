@@ -47,6 +47,36 @@ ip a
 
 ![Exemple de routage fait](../images/exemple_ipr.png)
 
+### Spécifique Routeur:
+Pour que le routeur fasse sont travail de **'pont'** entre les deux machines, il est important d'activer le **transfer de paquet**:
+
+```
+# Activation du pont de routage
+sudo sysctl -w net.ipv4.ip_forward=1
+```
+
+## 2- Application de script de routage sur client et serveur
+
+On applique des scripts pour faire la configuration des routes statiques spécifiant quel routes sont utilisables.
+
+* **Client :**
+* **Serveur :**
+
+## *Vérification:*
+
+**Ping de base**
+
+Sur le client, faire `ping 192.168.1.10` 
+
+**Vérification MPTCP**
+
+utiliser `ip mptcp endpoint show` pour voir si les interfaces sont bien enregistrées
+
+**Tester les multi-chemins exemple:**
+
+ 1- Installer `mptcpize` ou utiliser `iperf3` pour .
+ 2- Lancer un transfert et vérifiez avec nload ou iftop sur le routeur si les 4 interfaces reçoivent du trafic simultanément.
+
 [⮌ Retour au Readme général](../README.md)
 
 
