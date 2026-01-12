@@ -43,7 +43,8 @@ Pour finir, la vérification de l'application de la configuration:
 ip a
 ```
 *sortie : vous devriez voir les différentes adresses comme l'exemple ci-dessous:*
-*Nous pouvons y voir deux adresse *defaut* qui viennent d'une connexion pat pont avec mon ordinateur
+*Nous pouvons y voir deux adresse **defaut** qui viennent d'une connexion pat pont avec mon ordinateur*
+
 ![Exemple de routage fait](../images/exemple_ipr.png)
 
 [⮌ Retour au Readme général](../README.md)
