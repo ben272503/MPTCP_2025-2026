@@ -100,4 +100,4 @@ Bash
 ip mptcp limits show
 Vous êtes maintenant prêt à appliquer les configurations Netplan  ainsi que les scripts de routage adaptés aux interfaces de chaque machine.
 
-[⮌ Retour au Readme général](../README.md#L59)
+[⮌ Retour au Readme général](../README.md)
