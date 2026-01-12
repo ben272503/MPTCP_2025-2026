@@ -59,8 +59,8 @@ sudo sysctl -w net.ipv4.ip_forward=1
 
 On applique des scripts pour faire la configuration des routes statiques spécifiant quel routes sont utilisables.
 
-* **Client :**[`script client`](./script_client.md)
-* **Serveur :**[`script serveur`](./script_serveur.md)
+* **Client :** [`script client`](./script_client.md)
+* **Serveur :** [`script serveur`](./script_serveur.md)
 
 ## *Vérification:*
 
