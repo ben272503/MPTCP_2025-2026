@@ -20,7 +20,7 @@ Cela permet d'accélérer la phase de routage.
 
 ### Configuration des interfaces (Netplan) - Création des fichiers:
 
-```
+```console
 sudo nano /etc/netplan/99-mptcp-router.yaml
 ```
 > 💡 pour la propreté, il est préférable d'adapter le nom du fichier. exemple: **99-mptcp-client.yaml** pour le client
@@ -33,13 +33,13 @@ Puis on colle le contenu du fichier ci-dessous correspondant à notre machine
 
 Après avoir créé le fichier sur la machine correspondante, on applique les changements:
 
-```
+```console
 sudo netplan apply
 ```
 
 Pour finir, la vérification de l'application de la configuration:
 
-```
+```console
 ip a
 ```
 *sortie : vous devriez voir les différentes adresses comme l'exemple ci-dessous:*
@@ -50,7 +50,7 @@ ip a
 ### Spécifique Routeur:
 Pour que le routeur fasse sont travail de **'pont'** entre les deux machines, il est important d'activer le **transfer de paquet**:
 
-```
+```console
 # Activation du pont de routage
 sudo sysctl -w net.ipv4.ip_forward=1
 ```
