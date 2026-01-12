@@ -53,13 +53,19 @@ Le routeur joue un rôle clé :
 * Compilation d’un **noyau Linux intégrant MPTCP**
 * Déploiement sur machine virtuelle
 * Configuration du boot sur le noyau MPTCP
-[📄 Ouvrir le rapport PDF](docs/rapport_mptcp.pdf)
+
+**[voir l'étape d'implémentation du noyaux en détail](kernel_implementation.md)** 
+ 
+* Etablissement des adresses réseaux et routage
+
+**[voir l'étape de routage en détail](routing.md)**
+
 ### 🔹 Expérimentations réseau
 
 * Échanges TCP classiques
 * Échanges MPTCP
 * Analyse comparative (latence, résilience, chemins multiples)
-[📄 Ouvrir le rapport PDF](docs/rapport_mptcp.pdf)
+
 ### 🔹 Observation & analyse
 
 * Capture et analyse de trafic réseau
@@ -118,10 +124,10 @@ Le routeur joue un rôle clé :
 ```text
 MPTCP_2025-2026/
 ├── docs/           # Documentation, analyses, rapports
+├── images/         # Images utilisées dans les différents documents
 ├── kernel/         # Configuration et build du noyau MPTCP
 ├── scripts/        # Scripts d’attaque et de défense
 ├── ebpf/           # Programmes eBPF
-├── topology/       # Schémas et configurations réseau
 └── README.md
 ```
 
