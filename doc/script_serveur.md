@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# --- Configuration des variables ---
-# IPs du serveur [cite: 34, 37, 40, 43]
+# --- Configuration basée sur vos fichiers ---
+# IPs du serveur 
 IP_SERVERS=("192.168.1.10" "192.168.2.10" "192.168.3.10" "192.168.4.10")
 # Passerelles (IPs du routeur côté serveur) [cite: 22, 25, 28, 31]
 GW_ROUTER=("192.168.1.1" "192.168.2.1" "192.168.3.1" "192.168.4.1")
-# Interfaces (à vérifier avec 'ip link')
-INTERFACES=("enp11s0" "enp12s0" "enp13s0" "enp14s0")
+# Interfaces définies dans serveur_netplan.md 
+INTERFACES=("eth0" "eth1" "eth2" "eth3")
 # Réseau cible (Client)
 TARGET_NET="10.0.0.0/8"
 
 echo "Configuration du routage sur le SERVEUR..."
 
-# 1. Nettoyage et limites MPTCP
+# Nettoyage et limites MPTCP
 sudo ip mptcp endpoint flush
 sudo ip mptcp limits set subflow 4 add_addr_accepted 4
 
@@ -23,17 +23,17 @@ do
     IP=${IP_SERVERS[$i]}
     GW=${GW_ROUTER[$i]}
 
-    echo "Configuration de l'interface $IF ($IP) via table $TABLE..."
+    echo "Configuration de $IF ($IP) via GW $GW (Table $TABLE)..."
 
     # Configuration des tables de routage
     sudo ip route add $TARGET_NET dev $IF scope link table $TABLE
     sudo ip route add default via $GW dev $IF table $TABLE
     
-    # Règle de politique
+    # Règle de politique de routage
     sudo ip rule add from $IP table $TABLE
 
-    # Pour le serveur, on utilise 'signal' pour annoncer ses IPs au client
+    # Annonce des adresses via MPTCP (signal)
     sudo ip mptcp endpoint add $IP dev $IF signal
 done
 
-echo "Routage Serveur terminé."
+echo "Configuration Serveur terminée."
