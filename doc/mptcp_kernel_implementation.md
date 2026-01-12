@@ -1,5 +1,11 @@
+<img src="../images/MPTCP_logo.png" width="100">
+
 # Implémentation du Noyau MPTCP et Préparation des VMs (Ubuntu 22.04 LTS)
+
 Ce document décrit la procédure manuelle d'installation du noyau supportant le protocole MPTCP (MultiPath TCP), la configuration du chargeur de démarrage GRUB, ainsi que la personnalisation des machines virtuelles.
+
+
+
 
  ## 1. Installation du Noyau MPTCP
 L'implémentation repose sur l'installation d'un noyau Linux spécifique ou compilé avec les options MPTCP activées. Bien qu'Ubuntu 22.04 LTS inclue nativement un support MPTCP (noyau 5.15+), l'utilisation d'un noyau personnalisé permet souvent d'accéder à des fonctionnalités de gestion de chemins plus avancées.
