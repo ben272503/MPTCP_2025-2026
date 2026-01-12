@@ -54,11 +54,11 @@ Le routeur joue un rôle clé :
 * Déploiement sur machine virtuelle
 * Configuration du boot sur le noyau MPTCP
 
-**[🐧 voir l'étape d'implémentation du noyau en détail](kernel_implementation.md)** 
+**[🐧 voir l'étape d'implémentation du noyau en détail](doc/kernel_implementation.md)** 
  
 * Etablissement des adresses réseaux et routage
 
-**[🌐 voir l'étape de routage en détail](routing.md)**
+**[🌐 voir l'étape de routage en détail](doc/routing.md)**
 
 ### 🔹 Expérimentations réseau
 
