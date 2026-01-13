@@ -33,20 +33,20 @@ sudo apt-get install -f
 ```
 
 **Étape 4** : Vérification du déploiement<br>
-Vérifiez que le nouveau noyau est bien présent dans le répertoire /boot avant de redémarrer :
+1. Vérifiez que le nouveau noyau est bien présent dans le répertoire /boot avant de redémarrer :
 
-Bash
-
+```console
 ls /boot | grep vmlinuz
+```
 2. Configuration du GRUB (Choix du noyau au démarrage)
 Pour garantir la flexibilité de vos tests, il est essentiel de pouvoir choisir entre le noyau MPTCP et le noyau standard au lancement de la machine.
 
 Modification du fichier de configuration
 Ouvrez le fichier de configuration principal du GRUB :
 
-Bash
-
+```console
 sudo nano /etc/default/grub
+```
 Appliquez les modifications suivantes pour rendre le menu de sélection visible :
 
 Modifiez GRUB_TIMEOUT_STYLE=hidden par GRUB_TIMEOUT_STYLE=menu.
@@ -55,15 +55,15 @@ Ajustez GRUB_TIMEOUT=5 pour disposer de 5 secondes pour effectuer votre choix.
 
 (Optionnel) Utilisez GRUB_DEFAULT=saved et ajoutez GRUB_SAVEDEFAULT=true pour que le système démarre par défaut sur le dernier noyau sélectionné.
 
-Mise à jour et application
+Mise à jour et application  
 Une fois le fichier enregistré, validez les changements pour régénérer le menu de boot :
 
-Bash
-
+```console
 sudo update-grub
+```
 Note : Au redémarrage, si le menu n'apparaît pas, maintenez la touche Shift (ou Échap) enfoncée. Sélectionnez "Advanced options for Ubuntu" pour choisir explicitement votre noyau MPTCP.
 
-3. Clonage et Personnalisation des Machines
+3. Clonage et Personnalisation des Machines  
 Une fois la machine modèle ("VM Maître") configurée, nous procédons au clonage pour créer le Client, le Routeur et le Serveur.
 
 Étape 1 : Clonage intégral
