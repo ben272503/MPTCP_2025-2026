@@ -18,7 +18,15 @@ Cela permet d'accélérer la phase de routage.
 
 > ❗ Le routage suivant ne permet pas aux machines d'utiliser internet. Elles doivent en être coupées pour être dans un réseau fermé lors des tests MPTCP.
 
-### Configuration des interfaces (Netplan) - Création des fichiers:
+### 📘 Marche suivie si configuration à la main :
+*Ces commandes seront ce qu'on va retrouver dans les fichiers yaml de la configuration netplan*
+
+```console
+# exemple de commande d'ajout de route
+sudo ip route add 192.168.1.0/24 via 10.0.1.1 dev eth0
+```
+
+### 📗 Configuration des interfaces (Netplan) - Création des fichiers:
 
 ```console
 sudo nano /etc/netplan/99-mptcp-router.yaml
