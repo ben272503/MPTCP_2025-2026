@@ -85,27 +85,27 @@ sudo hostnamectl set-hostname Routeur-MPTCP
 # Sur la machine Serveur
 sudo hostnamectl set-hostname Serveur-MPTCP
 ```
-Étape 3 : Renommage de l'utilisateur (Optionnel)  
+**Étape 3** : Renommage de l'utilisateur (Optionnel)  
 Pour un rendu propre, vous pouvez renommer l'utilisateur par défaut pour qu'il reflète le rôle de la machine :
 
-Définissez un mot de passe root pour l'opération : sudo passwd root.
+Définissez un mot de passe root pour l'opération : `sudo passwd root`.
 
 Déconnectez-vous et passez en console TTY (Ctrl+Alt+F3).
 
 Connectez-vous en tant que root et lancez les commandes suivantes :
 
-Bash
-
+```console
 # Exemple pour passer de 'user' à 'client'
 usermod -l client -d /home/client -m ancien_nom_utilisateur
 groupmod -n client ancien_nom_utilisateur
-4. Vérification finale
+```
+## 4. Vérification finale  
 Après avoir redémarré sur chaque machine avec le bon noyau, vérifiez que la pile MPTCP est bien active et reconnue par le système :
 
-Bash
-
+```console
 # Vérification des limites de subflows (doit renvoyer des valeurs numériques)
 ip mptcp limits show
+```
 Vous êtes maintenant prêt à appliquer les configurations Netplan  ainsi que les scripts de routage adaptés aux interfaces de chaque machine.
 
 [⮌ Retour au Readme général](../README.md)
