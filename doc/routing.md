@@ -27,9 +27,9 @@ sudo nano /etc/netplan/99-mptcp-router.yaml
 
 Puis on colle le contenu du fichier ci-dessous correspondant à notre machine
 
-* **Routeur :** [`99-mptcp-router.yaml`](./netplan/routeur_netplan.md) — *Gère le transfert de paquets entre les deux sous-réseaux.*
-* **Client :** [`99-mptcp-client.yaml`](./netplan/client_netplan.md) — *10.0.X.X/24*
-* **Serveur :** [`99-mptcp-server.yaml`](./netplan/serveur_netplan.md) — *192.168.X.X/24*
+* **Routeur :** [`99-mptcp-router.yaml`](./netplan/routeur_netplan.yaml) — *Gère le transfert de paquets entre les deux sous-réseaux.*
+* **Client :** [`99-mptcp-client.yaml`](./netplan/client_netplan.yaml) — *10.0.X.X/24*
+* **Serveur :** [`99-mptcp-server.yaml`](./netplan/serveur_netplan.yaml) — *192.168.X.X/24*
 
 Après avoir créé le fichier sur la machine correspondante, on applique les changements:
 
