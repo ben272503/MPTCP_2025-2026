@@ -55,8 +55,6 @@ Nous avons établi un état de l'art du MPTCP pour se renseigner sur ce qu'étai
 Voici un résumé rapide de ce qu'es le MPTCP et ce qu'il permet de faire:
 Le MPTCP (MultiPath TCP) est une extension du protocole TCP traditionnel qui permet à deux hôtes de s'échanger des données en utilisant plusieurs chemins réseau simultanément au sein d'une seule et même connexion.
 
-Voici un résumé synthétique de ses capacités et de votre implémentation :
-
 **Qu'est-ce que le Multi-path TCP ?**
 
 * Multi-chemins : Contrairement au TCP standard qui est limité à une seule interface, le MPTCP peut diviser un flux de données sur plusieurs interfaces réseau (Wi-Fi, 4G, ou plusieurs liens Ethernet). 
@@ -65,14 +63,12 @@ Voici un résumé synthétique de ses capacités et de votre implémentation :
 
 **Ce qu'il permet de faire**
 
-![]()
-![]()
+![etat de l'art tcp](.images/etat-art-tcp.png)
+![etat de l'art mtcp](.images/etat-art-mptcp.png)
 
 * Agrégation de bande passante : Cumuler les débits de chaque interface pour augmenter la vitesse globale de transfert. 
 
-
 * Résilience et Fiabilité (Failover) : Si l'un des chemins (par exemple le "Chemin 1") subit une coupure, la connexion ne s'interrompt pas et bascule de manière transparente sur les autres chemins actifs. 
-
 
 * Continuité de service : Permet de passer d'un réseau à un autre (mobilité) sans perdre la session en cours.
 
