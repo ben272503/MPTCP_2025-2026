@@ -17,8 +17,11 @@ Avant toute installation, assurez-vous que le système est à jour et possède l
 sudo apt update && sudo apt upgrade -y
 sudo apt install git build-essential libncurses-dev bison flex libssl-dev libelf-dev -y
 ```
+**Étape 2** : Téléchargement des paquets du noyau MPTCP
+Pour télécharger et installer les paquets du noyau, suivre le guide proposer à cette adresse :
+[multipath-tcp.org](https://multipath-tcp.org/pmwiki.php/Users/AptRepository).
 
-**Étape 2** : Installation des paquets du noyau
+**Étape 3** : Installation des paquets du noyau
 Si vous disposez des fichiers .deb du noyau (image et headers) téléchargés au préalable :
 
 ```console
