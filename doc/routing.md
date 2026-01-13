@@ -26,7 +26,7 @@ Cela permet d'accélérer la phase de routage.
 sudo ip route add 192.168.1.0/24 via 10.0.1.1 dev eth0
 ```
 
-### 📗 Configuration des interfaces (Netplan) - Création des fichiers:
+### 📗 Configuration des interfaces par Netplan (automatique) - Création des fichiers:
 
 ```console
 sudo nano /etc/netplan/99-mptcp-router.yaml
