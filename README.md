@@ -65,6 +65,7 @@ Le MPTCP (MultiPath TCP) est une extension du protocole TCP traditionnel qui per
 
 ![etat de l'art tcp](./images/etat-art-tcp.png)
 ![etat de l'art mtcp](./images/etat-art-mptcp.png)
+
 *sources `https://www.mptcp.dev/`*
 
 * Agrégation de bande passante : Cumuler les débits de chaque interface pour augmenter la vitesse globale de transfert. 
