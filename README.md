@@ -65,6 +65,9 @@ Voici un résumé synthétique de ses capacités et de votre implémentation :
 
 **Ce qu'il permet de faire**
 
+![]()
+![]()
+
 * Agrégation de bande passante : Cumuler les débits de chaque interface pour augmenter la vitesse globale de transfert. 
 
 
