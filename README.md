@@ -143,7 +143,7 @@ Voici un résumé synthétique de ses capacités et de votre implémentation :
 
 * Benjamin EMEREAU
 * Corentin VIGAN
-* Mattis LELIÈVRE
+* Matthis LE LIÈVRE
 
 ---
 
