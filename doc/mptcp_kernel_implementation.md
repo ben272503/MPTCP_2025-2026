@@ -33,12 +33,12 @@ sudo apt-get install -f
 ```
 
 **Étape 4** : Vérification du déploiement<br>
-1. Vérifiez que le nouveau noyau est bien présent dans le répertoire /boot avant de redémarrer :
+Vérifiez que le nouveau noyau est bien présent dans le répertoire /boot avant de redémarrer :
 
 ```console
 ls /boot | grep vmlinuz
 ```
-2. Configuration du GRUB (Choix du noyau au démarrage)
+## 2. Configuration du GRUB (Choix du noyau au démarrage)
 Pour garantir la flexibilité de vos tests, il est essentiel de pouvoir choisir entre le noyau MPTCP et le noyau standard au lancement de la machine.
 
 Modification du fichier de configuration
@@ -63,15 +63,15 @@ sudo update-grub
 ```
 Note : Au redémarrage, si le menu n'apparaît pas, maintenez la touche Shift (ou Échap) enfoncée. Sélectionnez "Advanced options for Ubuntu" pour choisir explicitement votre noyau MPTCP.
 
-3. Clonage et Personnalisation des Machines  
+## 3. Clonage et Personnalisation des Machines  
 Une fois la machine modèle ("VM Maître") configurée, nous procédons au clonage pour créer le Client, le Routeur et le Serveur.
 
-Étape 1 : Clonage intégral
+**Étape 1** : Clonage intégral  
 Dans votre hyperviseur (VirtualBox, VMware, ou KVM), effectuez un "Clone intégral".
 
 ⚠️ Attention : Cochez impérativement l'option "Réinitialiser les adresses MAC" pour éviter que les interfaces réseau n'entrent en conflit lors de la communication.
 
-Étape 2 : Renommage (Hostname)
+**Étape 2** : Renommage (Hostname)  
 Pour faciliter l'identification dans la topologie, modifiez le nom d'hôte sur chaque machine :
 
 Bash
