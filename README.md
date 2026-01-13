@@ -46,17 +46,34 @@ Le routeur joue un rôle clé :
 
 ---
 
-## ⚙️ Travaux réalisés - Section à modifier ⚠️
+## ⚙️ Travaux réalisés
 
 ### 🔹 Etat de l'art
 
 Nous avons établi un état de l'art du MPTCP pour se renseigner sur ce qu'était cette technologie, ce qui existait comme application en particulier celles sur lesquelles nous allions travailler.
 
 Voici un résumé rapide de ce qu'es le MPTCP et ce qu'il permet de faire:
+Le MPTCP (MultiPath TCP) est une extension du protocole TCP traditionnel qui permet à deux hôtes de s'échanger des données en utilisant plusieurs chemins réseau simultanément au sein d'une seule et même connexion.
 
-## Section à modifier ⚠️
+Voici un résumé synthétique de ses capacités et de votre implémentation :
 
-Pour plus de détail: *[📶 état de l'art complet](doc/etat_d-art.md)*
+**Qu'est-ce que le Multi-path TCP ?**
+
+* Multi-chemins : Contrairement au TCP standard qui est limité à une seule interface, le MPTCP peut diviser un flux de données sur plusieurs interfaces réseau (Wi-Fi, 4G, ou plusieurs liens Ethernet). 
+
+* Sous-flux (Subflows) : Il crée des connexions TCP individuelles sur chaque chemin disponible et les agrège pour l'application. 
+
+**Ce qu'il permet de faire**
+
+* Agrégation de bande passante : Cumuler les débits de chaque interface pour augmenter la vitesse globale de transfert. 
+
+
+* Résilience et Fiabilité (Failover) : Si l'un des chemins (par exemple le "Chemin 1") subit une coupure, la connexion ne s'interrompt pas et bascule de manière transparente sur les autres chemins actifs. 
+
+
+* Continuité de service : Permet de passer d'un réseau à un autre (mobilité) sans perdre la session en cours.
+
+> Pour plus de détail: *[📶 état de l'art complet](doc/etat_d-art.md)*
 
 ### 🔹 Implémentation système
 
