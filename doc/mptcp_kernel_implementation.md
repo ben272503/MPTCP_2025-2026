@@ -74,8 +74,7 @@ Dans votre hyperviseur (VirtualBox, VMware, ou KVM), effectuez un "Clone intégr
 **Étape 2** : Renommage (Hostname)  
 Pour faciliter l'identification dans la topologie, modifiez le nom d'hôte sur chaque machine :
 
-Bash
-
+```console
 # Sur la machine Client
 sudo hostnamectl set-hostname Client-MPTCP
 
@@ -84,7 +83,8 @@ sudo hostnamectl set-hostname Routeur-MPTCP
 
 # Sur la machine Serveur
 sudo hostnamectl set-hostname Serveur-MPTCP
-Étape 3 : Renommage de l'utilisateur (Optionnel)
+```
+Étape 3 : Renommage de l'utilisateur (Optionnel)  
 Pour un rendu propre, vous pouvez renommer l'utilisateur par défaut pour qu'il reflète le rôle de la machine :
 
 Définissez un mot de passe root pour l'opération : sudo passwd root.
