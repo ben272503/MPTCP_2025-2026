@@ -20,16 +20,16 @@ sudo apt install git build-essential libncurses-dev bison flex libssl-dev libelf
 **Étape 2** : Téléchargement des paquets du noyau MPTCP<br>
 Pour télécharger et installer les paquets du noyau, suivre le guide proposé à cette adresse :
 [multipath-tcp.org](https://multipath-tcp.org/pmwiki.php/Users/AptRepository).  
-Télécharger les fichier .deb de la version souhaitée sur le [repository github](https://github.com/multipath-tcp/mptcp/releases).
+Télécharger les fichier .deb de la version souhaitée sur le [repository github](https://github.com/multipath-tcp/mptcp/releases).  
 Pour ce projet nous avons utilisé la version v0.95.3.
 
 **Étape 3** : Installation des paquets du noyau<br>
-Si vous disposez des fichiers .deb du noyau (image et headers) téléchargés au préalable :
+Une fois les fichiers .deb du noyau téléchargés il faut les décompresser et les installer :
 
 ```console
 # Se placer dans le dossier contenant les fichiers .deb
-sudo dpkg -i linux-image-*.deb
-sudo dpkg -i linux-headers-*.deb
+sudo dpkg -i linux*.deb
+sudo apt-get install -f
 ```
 
 **Étape 4** : Vérification du déploiement<br>
