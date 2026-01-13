@@ -53,7 +53,8 @@ Modifiez `GRUB_TIMEOUT_STYLE=hidden` par `GRUB_TIMEOUT_STYLE=menu`.
 
 Ajustez `GRUB_TIMEOUT=5` pour disposer de 5 secondes pour effectuer votre choix.
 
-(Optionnel) Utilisez `GRUB_DEFAULT=saved` et ajoutez `GRUB_SAVEDEFAULT=true` pour que le système démarre par défaut sur le dernier noyau sélectionné.
+(Optionnel) Utilisez `GRUB_DEFAULT=saved` et ajoutez `GRUB_SAVEDEFAULT=true` pour que le système démarre par défaut sur le dernier noyau sélectionné.  
+<img src="../images/1-modification-grub-lancement.png" width="500">
 
 Mise à jour et application  
 Une fois le fichier enregistré, validez les changements pour régénérer le menu de boot :
