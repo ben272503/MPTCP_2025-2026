@@ -10,18 +10,20 @@ Ce document décrit la procédure manuelle d'installation du noyau supportant le
  ## 1. Installation du Noyau MPTCP
 L'implémentation repose sur l'installation d'un noyau Linux spécifique ou compilé avec les options MPTCP activées. Bien qu'Ubuntu 22.04 LTS inclue nativement un support MPTCP (noyau 5.15+), l'utilisation d'un noyau personnalisé permet souvent d'accéder à des fonctionnalités de gestion de chemins plus avancées.
 
-**Étape 1** : Dépendances et préparation
+**Étape 1** : Dépendances et préparation<br>
 Avant toute installation, assurez-vous que le système est à jour et possède les outils nécessaires à la gestion des paquets et des modules :
 
 ```console
 sudo apt update && sudo apt upgrade -y
 sudo apt install git build-essential libncurses-dev bison flex libssl-dev libelf-dev -y
 ```
-**Étape 2** : Téléchargement des paquets du noyau MPTCP
-Pour télécharger et installer les paquets du noyau, suivre le guide proposer à cette adresse :
-[multipath-tcp.org](https://multipath-tcp.org/pmwiki.php/Users/AptRepository).
+**Étape 2** : Téléchargement des paquets du noyau MPTCP<br>
+Pour télécharger et installer les paquets du noyau, suivre le guide proposé à cette adresse :
+[multipath-tcp.org](https://multipath-tcp.org/pmwiki.php/Users/AptRepository).  
+Télécharger les fichier .deb de la version souhaitée sur le [repository github](https://github.com/multipath-tcp/mptcp/releases).
+Pour ce projet nous avons utilisé la version v0.95.3.
 
-**Étape 3** : Installation des paquets du noyau
+**Étape 3** : Installation des paquets du noyau<br>
 Si vous disposez des fichiers .deb du noyau (image et headers) téléchargés au préalable :
 
 ```console
@@ -30,7 +32,7 @@ sudo dpkg -i linux-image-*.deb
 sudo dpkg -i linux-headers-*.deb
 ```
 
-Étape 3 : Vérification du déploiement
+**Étape 4** : Vérification du déploiement<br>
 Vérifiez que le nouveau noyau est bien présent dans le répertoire /boot avant de redémarrer :
 
 Bash
