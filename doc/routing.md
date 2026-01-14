@@ -50,6 +50,7 @@ Puis appliquer les changements pour de bon:
 ```console
 sudo netplan apply
 ```
+* On peut s'assurer du résultat avec `sudo netplan try`
 
 Pour finir, la vérification de l'application de la configuration:
 
