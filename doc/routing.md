@@ -42,6 +42,7 @@ Puis on colle le contenu du fichier ci-dessous correspondant à notre machine
 Après avoir créé le fichier sur la machine correspondante, on peut vérifier les changement qui seront appliqués (optionnel mais recommandé):
 
 ```console
+# ne dois rien renvoyer si pas d'erreur/warning
 sudo netplan generate
 ```
 > 💡Adapter la configuration en fonction de ces warning. voir sur internet
