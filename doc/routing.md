@@ -44,6 +44,7 @@ Après avoir créé le fichier sur la machine correspondante, on peut vérifier 
 ```console
 sudo netplan generate
 ```
+> 💡Adapter la configuration en fonction de ces warning. voir sur internet
 
 Puis appliquer les changements pour de bon:
 
