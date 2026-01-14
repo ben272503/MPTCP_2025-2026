@@ -39,7 +39,13 @@ Puis on colle le contenu du fichier ci-dessous correspondant à notre machine
 * **Client :** [`99-mptcp-client.yaml`](./netplan/client_netplan.yaml) — *10.0.X.X/24*
 * **Serveur :** [`99-mptcp-server.yaml`](./netplan/serveur_netplan.yaml) — *192.168.X.X/24*
 
-Après avoir créé le fichier sur la machine correspondante, on applique les changements:
+Après avoir créé le fichier sur la machine correspondante, on peut vérifier les changement qui seront appliqués (optionnel mais recommandé):
+
+```console
+sudo netplan generate
+```
+
+Puis appliquer les changements pour de bon:
 
 ```console
 sudo netplan apply
