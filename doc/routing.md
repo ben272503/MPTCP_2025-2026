@@ -22,13 +22,7 @@ Cela permet d'accélérer la phase de routage.
 
 > ❗ Le routage suivant ne permet pas aux machines d'utiliser internet. Elles doivent en être coupées pour être dans un réseau fermé lors des tests MPTCP.
 
-### 📘 Marche suivie si configuration à la main :
-*Ces commandes seront ce qu'on va retrouver dans les fichiers yaml de la configuration netplan*
-
-```console
-# exemple de commande d'ajout de route
-sudo ip route add 192.168.1.0/24 via 10.0.1.1 dev eth0
-```
+### 📘 Possibilité de faire toute cette configuration à la main (travail de réseau de base)
 
 ### 📗 Configuration des interfaces par Netplan (script) - Création des fichiers:
 
@@ -46,6 +40,7 @@ sudo chown root:root /etc/netplan/*.yaml
 ```
 
 Puis on colle le contenu du fichier ci-dessous correspondant à notre machine
+> Il est important d'adapter le nom des interfaces en fonction de celles des machines. Exemple: `eth0` peut devenir `enp7s0`
 
 * **Routeur :** [`99-mptcp-router.yaml`](./netplan/routeur_netplan.yaml) — *Gère le transfert de paquets entre les deux sous-réseaux.*
 * **Client :** [`99-mptcp-client.yaml`](./netplan/client_netplan.yaml) — *10.0.X.X/24*
