@@ -39,8 +39,8 @@ sudo nano /etc/netplan/99-mptcp-router.yaml
 
 * on change les droits de ce fichier pour que le netplan ne soit accessible que par *`root`*.
 ```console
-sudo chmod 600 /etc/netplan/01-network-manager-all.yaml
-sudo chmod 600 /etc/netplan/99-mptcp-routeur.yaml
+# a adapter si vous avez changé le nom
+sudo chmod 600 /etc/netplan/99-mptcp-routeur.yaml 
 sudo chown root:root /etc/netplan/*.yaml
 ```
 
