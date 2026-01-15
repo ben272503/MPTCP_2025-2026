@@ -31,6 +31,13 @@ sudo ip route add 192.168.1.0/24 via 10.0.1.1 dev eth0
 ```console
 sudo nano /etc/netplan/99-mptcp-router.yaml
 ```
+* on change les droits de ce fichier pour que le netplan ne soit accessible que par *`root`*.
+```console
+sudo chmod 600 /etc/netplan/01-network-manager-all.yaml
+sudo chmod 600 /etc/netplan/99-mptcp-routeur.yaml
+sudo chown root:root /etc/netplan/*.yaml
+```
+
 > 💡 pour la propreté, il est préférable d'adapter le nom du fichier. exemple: **99-mptcp-client.yaml** pour le client
 
 Puis on colle le contenu du fichier ci-dessous correspondant à notre machine
