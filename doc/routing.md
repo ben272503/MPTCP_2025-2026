@@ -10,6 +10,10 @@ Une table de routage classique est établie avec plusieures routes statiques nou
 
 Il faut ajouter des interfaces a chaques cartes pour qu'elles puisse les utiliser ensuite.
 
+* **4 interfaces MPTCP** coté client *(10.0.X.10)*
+* **4 interfaces MPTCP** coté serveur *(192.168.X.10)*
+* **8 interfaces sur le routeur** (4 côté client, 4 côté serveur)
+
 ![Topologie du réseau MPTCP](../images/MPTCP_Topology.png)
 
 ### Etape manuelle: 
@@ -31,14 +35,14 @@ sudo ip route add 192.168.1.0/24 via 10.0.1.1 dev eth0
 ```console
 sudo nano /etc/netplan/99-mptcp-router.yaml
 ```
+> 💡 pour la propreté, il est préférable d'adapter le nom du fichier. exemple: **99-mptcp-client.yaml** pour le client
+
 * on change les droits de ce fichier pour que le netplan ne soit accessible que par *`root`*.
 ```console
 sudo chmod 600 /etc/netplan/01-network-manager-all.yaml
 sudo chmod 600 /etc/netplan/99-mptcp-routeur.yaml
 sudo chown root:root /etc/netplan/*.yaml
 ```
-
-> 💡 pour la propreté, il est préférable d'adapter le nom du fichier. exemple: **99-mptcp-client.yaml** pour le client
 
 Puis on colle le contenu du fichier ci-dessous correspondant à notre machine
 
