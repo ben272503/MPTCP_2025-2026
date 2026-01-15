@@ -1,47 +1,67 @@
 network:
   version: 2
   renderer: NetworkManager
+
   ethernets:
     # ----------------------------------------------------
     # INTERFACE D'ADMINISTRATION (enp7s0)
-    # Reste en DHCP, mais SANS GATEWAY par défaut pour éviter de polluer le routage MPTCP.
-    # On la laisse de côté pour éviter de casser l'accès à internet/l'hôte
+    # ----------------------------------------------------
+    # - Utilisée uniquement pour l'accès à l'hôte / Internet via NAT.
+    # - On laisse le DHCP actif.
+    # - On ajoute une route par défaut avec une métrique très élevée
+    #   pour éviter qu'elle interfère avec le routage MPTCP.
     # ----------------------------------------------------
     enp7s0:
       dhcp4: true
       routes:
         - to: 0.0.0.0/0
-          via: 192.168.122.1  # Gateway par défaut du NAT
-          metric: 1000        # Haute métrique pour qu'elle soit ignorée
+          via: 192.168.122.1   # Gateway NAT de la VM
+          metric: 1000         # Très haute métrique → route de secours uniquement
 
     # ----------------------------------------------------
-    # CHEMINS MPTCP (Côté CLIENT: 10.0.X.1)
+    # INTERFACES MPTCP — CÔTÉ CLIENT (10.0.X.1)
+    # ----------------------------------------------------
+    # Ces interfaces sont les 4 chemins MPTCP côté client.
+    # - Pas de DHCP
+    # - Pas de route par défaut
+    # - Adresses statiques uniquement
     # ----------------------------------------------------
     enp1s0:
       dhcp4: no
-      addresses: [10.0.1.1/24] # Chemin 1 Client
+      addresses: [10.0.1.1/24]   # Chemin MPTCP 1 (Client → Routeur)
+
     enp8s0:
       dhcp4: no
-      addresses: [10.0.2.1/24] # Chemin 2 Client
+      addresses: [10.0.2.1/24]   # Chemin MPTCP 2 (Client → Routeur)
+
     enp9s0:
       dhcp4: no
-      addresses: [10.0.3.1/24] # Chemin 3 Client
+      addresses: [10.0.3.1/24]   # Chemin MPTCP 3 (Client → Routeur)
+
     enp10s0:
       dhcp4: no
-      addresses: [10.0.4.1/24] # Chemin 4 Client
+      addresses: [10.0.4.1/24]   # Chemin MPTCP 4 (Client → Routeur)
 
     # ----------------------------------------------------
-    # CHEMINS MPTCP (Côté SERVEUR: 192.168.X.1)
+    # INTERFACES MPTCP — CÔTÉ SERVEUR (192.168.X.1)
+    # ----------------------------------------------------
+    # Ces interfaces sont les 4 chemins MPTCP côté serveur.
+    # - Pas de DHCP
+    # - Pas de route par défaut
+    # - Adresses statiques uniquement
     # ----------------------------------------------------
     enp11s0:
       dhcp4: no
-      addresses: [192.168.1.1/24] # Chemin 1 Serveur
+      addresses: [192.168.1.1/24]   # Chemin MPTCP 1 (Routeur → Serveur)
+
     enp12s0:
       dhcp4: no
-      addresses: [192.168.2.1/24] # Chemin 2 Serveur
+      addresses: [192.168.2.1/24]   # Chemin MPTCP 2 (Routeur → Serveur)
+
     enp13s0:
       dhcp4: no
-      addresses: [192.168.3.1/24] # Chemin 3 Serveur
+      addresses: [192.168.3.1/24]   # Chemin MPTCP 3 (Routeur → Serveur)
+
     enp14s0:
       dhcp4: no
-      addresses: [192.168.4.1/24] # Chemin 4 Serveur
+      addresses: [192.168.4.1/24]   # Chemin MPTCP 4 (Routeur → Serveur)
