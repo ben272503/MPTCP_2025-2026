@@ -36,4 +36,4 @@ do
     sudo ip mptcp endpoint add $IP dev $IF subflow
 done
 
-echo "Configuration Client terminée."
+echo "Configuration Client terminée." | lolcat
