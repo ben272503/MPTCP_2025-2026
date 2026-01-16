@@ -26,34 +26,37 @@ Cela permet d'accélérer la phase de routage.
 
 ### 📗 Configuration des interfaces par Netplan (script) - Création des fichiers:
 
-```console
-sudo nano /etc/netplan/99-mptcp-router.yaml
-```
-> 💡 pour la propreté, il est préférable d'adapter le nom du fichier. exemple: **99-mptcp-client.yaml** pour le client
-
-* on change les droits de ce fichier pour que le netplan ne soit accessible que par *`root`*.
-```console
-sudo chmod 600 /etc/netplan/01-network-manager-all.yaml
-# a adapter si vous avez changé le nom
-sudo chmod 600 /etc/netplan/99-mptcp-routeur.yaml 
-sudo chown root:root /etc/netplan/*.yaml
-```
-
-Puis on colle le contenu du fichier ci-dessous correspondant à notre machine en adaptant le nom des interfaces
-
-Pour avoir le nom des interfaces il faut faire `ip link` sur la machine correspondante
-
-> Il est important d'adapter le nom des interfaces en fonction de celles des machines. Exemple: `eth0` peut devenir `enp7s0`
-
+Récupérer les fichiers netplan correspondants à la topologie réseau choisie:
 
 * **Routeur :** [`99-mptcp-router.yaml`](./netplan/routeur_netplan.yaml) — *Gère le transfert de paquets entre les deux sous-réseaux.*
 * **Client :** [`99-mptcp-client.yaml`](./netplan/client_netplan.yaml) — *10.0.X.X/24*
 * **Serveur :** [`99-mptcp-server.yaml`](./netplan/serveur_netplan.yaml) — *192.168.X.X/24*
+___
+Sur chaque machine que l'on configure, on commence par récupérer le nom des adresses créé par la machine:
+
+```console
+ip link
+```
+Puis on créé le fichier sur la machine et on ajoute le contenu:
+
+```console
+sudo nano /etc/netplan/99-mptcp-router.yaml
+```
+> 💡 pour la propreté, il est préférable d'adapter le nom du fichier.
+> exemple: **99-mptcp-client.yaml** ,**99-mptcp-serveur.yaml** etc..
+
+On change les droits de ce fichier pour que le netplan ne soit accessible que par *`root`*.
+```console
+sudo chmod 600 /etc/netplan/01-network-manager-all.yaml
+# a adapter si vous avez changé le nom:
+sudo chmod 600 /etc/netplan/99-mptcp-routeur.yaml 
+sudo chown root:root /etc/netplan/*.yaml
+```
 
 Après avoir créé le fichier sur la machine correspondante, on peut vérifier les changement qui seront appliqués (optionnel mais recommandé):
 
 ```console
-# ne dois rien renvoyer si pas d erreur ou warning
+# ne dois rien renvoyer
 sudo netplan generate
 ```
 > 💡Adapter la configuration en fonction de ces warning. voir sur internet
@@ -75,7 +78,7 @@ ip a
 
 ![Exemple de routage fait](../images/exemple_ipr.png)
 
-### Spécifique Routeur:
+## Spécifique Routeur:
 Pour que le routeur fasse sont travail de **'pont'** entre les deux machines, il est important d'activer le **transfer de paquet**:
 
 ```console
@@ -84,7 +87,7 @@ sudo sysctl -w net.ipv4.ip_forward=1
 # pour le rendre permanent:
 echo "net.ipv4.ip_forward=1" | sudo tee /etc/sysctl.d/99-mptcp.conf
 ```
-
+___
 ## 2- Application de script de routage sur client et serveur
 
 On applique des scripts pour faire la configuration des routes statiques spécifiant quel routes sont utilisables.
