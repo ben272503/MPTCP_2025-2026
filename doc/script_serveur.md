@@ -15,18 +15,6 @@ TARGET_NET="10.0.0.0/8"
 
 echo "Configuration du routage sur le SERVEUR..."
 
-# Nettoyage des règles existantes
-sudo ip rule flush
-sudo ip rule add from all lookup local pref 0
-sudo ip rule add from all lookup main pref 32766
-sudo ip rule add from all lookup default pref 32767
-
-# Nettoyage des tables 20–23
-for T in 20 21 22 23
-do
-    sudo ip route flush table $T 2>/dev/null
-done
-
 # Configuration des tables et règles
 for i in {0..3}
 do
