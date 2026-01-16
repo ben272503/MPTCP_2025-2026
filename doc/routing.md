@@ -53,7 +53,7 @@ sudo chmod 600 /etc/netplan/99-mptcp-routeur.yaml
 sudo chown root:root /etc/netplan/*.yaml
 ```
 
-Après avoir créé le fichier sur la machine correspondante, on peut vérifier les changement qui seront appliqués (optionnel mais recommandé):
+Après avoir créé le fichier sur la machine correspondante, on peut vérifier les changement qui seront appliqués:
 
 ```console
 # ne dois rien renvoyer
