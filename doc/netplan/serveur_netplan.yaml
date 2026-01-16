@@ -4,7 +4,7 @@ network:
 
   ethernets:
     # Interface d'administration (DHCP)
-    enp7s0:
+    enp1s0:
       dhcp4: true
       routes:
         - to: 0.0.0.0/0
@@ -15,18 +15,18 @@ network:
     # CHEMINS MPTCP (Côté serveur: 192.168.X.10)
     # ----------------------------------------------------
 
-    enp8s0:
+    enp7s0:
       dhcp4: false
       addresses: [192.168.1.10/24]
 
-    enp9s0:
+    enp8s0:
       dhcp4: false
       addresses: [192.168.2.10/24]
 
-    enp10s0:
+    enp9s0:
       dhcp4: false
       addresses: [192.168.3.10/24]
 
-    enp11s0:
+    enp10s0:
       dhcp4: false
       addresses: [192.168.4.10/24]
