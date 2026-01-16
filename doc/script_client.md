@@ -6,7 +6,7 @@ IP_CLIENTS=("10.0.1.10" "10.0.2.10" "10.0.3.10" "10.0.4.10")
 # Passerelles (IPs du routeur côté client) [cite: 6, 10, 14, 18]
 GW_ROUTER=("10.0.1.1" "10.0.2.1" "10.0.3.1" "10.0.4.1")
 # Interfaces définies dans client_netplan.md 
-INTERFACES=("eth0" "eth1" "eth2" "eth3")
+INTERFACES=("enp7s0" "enp8s0" "enp9s0" "enp10s0")
 # Réseau cible (Serveur)
 TARGET_NET="192.168.0.0/16"
 
