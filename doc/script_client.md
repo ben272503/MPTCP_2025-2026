@@ -1,19 +1,15 @@
 #!/bin/bash
 
-# --- Configuration du CLIENT ---
-# IPs du client
-IP_CLIENT=("10.0.1.10" "10.0.2.10" "10.0.3.10" "10.0.4.10")
-
-# Passerelles (routeur côté client)
-GW_ROUTER=("10.0.1.1" "10.0.2.1" "10.0.3.1" "10.0.4.1")
+echo "Configuration du routage sur le CLIENT..."
 
 # Interfaces du client
 INTERFACES=("enp7s0" "enp8s0" "enp9s0" "enp10s0")
 
+# Gateways côté client (routeur)
+GW_ROUTER=("10.0.1.1" "10.0.2.1" "10.0.3.1" "10.0.4.1")
+
 # Réseaux du serveur
 SERVER_NETS=("192.168.1.0/24" "192.168.2.0/24" "192.168.3.0/24" "192.168.4.0/24")
-
-echo "Configuration du routage sur le CLIENT..."
 
 for i in {0..3}
 do
