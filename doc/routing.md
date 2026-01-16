@@ -39,10 +39,10 @@ sudo chmod 600 /etc/netplan/99-mptcp-routeur.yaml
 sudo chown root:root /etc/netplan/*.yaml
 ```
 
-Puis on colle le contenu du fichier ci-dessous correspondant à notre machine
+Puis on colle le contenu du fichier ci-dessous correspondant à notre machine en adaptant le nom des interfaces
 > Il est important d'adapter le nom des interfaces en fonction de celles des machines. Exemple: `eth0` peut devenir `enp7s0`
 
-> Pour avoir le nom des interfaces il faut faire `ip link` sur la machine correspondante
+Pour avoir le nom des interfaces il faut faire `ip link` sur la machine correspondante
 
 * **Routeur :** [`99-mptcp-router.yaml`](./netplan/routeur_netplan.yaml) — *Gère le transfert de paquets entre les deux sous-réseaux.*
 * **Client :** [`99-mptcp-client.yaml`](./netplan/client_netplan.yaml) — *10.0.X.X/24*
