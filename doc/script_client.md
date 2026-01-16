@@ -11,6 +11,16 @@ GW_ROUTER=("10.0.1.1" "10.0.2.1" "10.0.3.1" "10.0.4.1")
 # Réseaux du serveur
 SERVER_NETS=("192.168.1.0/24" "192.168.2.0/24" "192.168.3.0/24" "192.168.4.0/24")
 
+sudo ip rule flush
+sudo ip rule add from all lookup local pref 0
+sudo ip rule add from all lookup main pref 32766
+sudo ip rule add from all lookup default pref 32767
+
+for T in 20 21 22 23
+do
+    sudo ip route flush table $T 2>/dev/null
+done
+
 for i in {0..3}
 do
     IF=${INTERFACES[$i]}
