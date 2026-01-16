@@ -32,7 +32,7 @@ Récupérer les fichiers netplan correspondants à la topologie réseau choisie:
 * **Client :** [`99-mptcp-client.yaml`](./netplan/client_netplan.yaml) — *10.0.X.X/24*
 * **Serveur :** [`99-mptcp-server.yaml`](./netplan/serveur_netplan.yaml) — *192.168.X.X/24*
 ___
-Sur chaque machine que l'on configure, on commence par récupérer le nom des adresses créé par la machine:
+➡️ Sur chaque machine que l'on configure, on commence par récupérer le nom des adresses créé par la machine:
 
 ```console
 ip link
