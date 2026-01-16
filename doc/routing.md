@@ -97,9 +97,6 @@ On applique des scripts pour faire la configuration des routes statiques spécif
 * **Client :** [`script client`](./script_client.md)
 * **Serveur :** [`script serveur`](./script_serveur.md)
 
-> Tips si vous ne savez pas appliquer de script:
-> 
-> Appliquez les scripts via un fichier `.sh` ou via la commande `script`
 
 ## *Vérification:*
 
