@@ -58,6 +58,8 @@ Après avoir créé le fichier sur la machine correspondante, on peut vérifier 
 ```console
 # ne dois rien renvoyer
 sudo netplan generate
+# permet d'activer networkd si il ne l'es pas déjà
+sudo systemctl enable systemd-networkd-wait-online --now
 ```
 > 💡Adapter la configuration en fonction de ces warning. voir sur internet
 
