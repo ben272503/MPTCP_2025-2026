@@ -6,7 +6,7 @@ IP_SERVERS=("192.168.1.10" "192.168.2.10" "192.168.3.10" "192.168.4.10")
 # Passerelles (IPs du routeur côté serveur) [cite: 22, 25, 28, 31]
 GW_ROUTER=("192.168.1.1" "192.168.2.1" "192.168.3.1" "192.168.4.1")
 # Interfaces définies dans serveur_netplan.md 
-INTERFACES=("eth0" "eth1" "eth2" "eth3")
+INTERFACES=("enp7s0" "enp8s0" "enp9s0" "enp10s0")
 # Réseau cible (Client)
 TARGET_NET="10.0.0.0/8"
 
