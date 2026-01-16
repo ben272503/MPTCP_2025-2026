@@ -13,7 +13,7 @@ L'implémentation repose sur l'installation d'un noyau Linux spécifique ou comp
 **Étape 1** : Dépendances et préparation<br>
 Avant toute installation, assurez-vous que le système est à jour et possède les outils nécessaires à la gestion des paquets et des modules :
 
-```console
+```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install git build-essential libncurses-dev bison flex libssl-dev libelf-dev -y
 ```
@@ -26,7 +26,7 @@ Pour ce projet nous avons utilisé la version v0.95.3.
 **Étape 3** : Installation des paquets du noyau<br>
 Une fois les fichiers .deb du noyau téléchargés il faut les décompresser et les installer :
 
-```console
+```bash
 # Se placer dans le dossier contenant les fichiers .deb
 sudo dpkg -i linux*.deb
 sudo apt-get install -f
@@ -35,7 +35,7 @@ sudo apt-get install -f
 **Étape 4** : Vérification du déploiement<br>
 Vérifiez que le nouveau noyau est bien présent dans le répertoire /boot avant de redémarrer :
 
-```console
+```bash
 ls /boot | grep vmlinuz
 ```
 ## 2. Configuration du GRUB (Choix du noyau au démarrage)
@@ -44,7 +44,7 @@ Pour garantir la flexibilité de vos tests, il est essentiel de pouvoir choisir 
 Modification du fichier de configuration
 Ouvrez le fichier de configuration principal du GRUB :
 
-```console
+```bash
 sudo nano /etc/default/grub
 ```
 Appliquez les modifications suivantes pour rendre le menu de sélection visible :
@@ -59,7 +59,7 @@ Ajustez `GRUB_TIMEOUT=5` pour disposer de 5 secondes pour effectuer votre choix.
 Mise à jour et application  
 Une fois le fichier enregistré, validez les changements pour régénérer le menu de boot :
 
-```console
+```bash
 sudo update-grub
 ```
 Note : Au redémarrage, si le menu n'apparaît pas, maintenez la touche Shift (ou Échap) enfoncée. Sélectionnez "Advanced options for Ubuntu" pour choisir explicitement votre noyau MPTCP.
@@ -75,7 +75,7 @@ Dans votre hyperviseur (VirtualBox, VMware, ou KVM), effectuez un "Clone intégr
 **Étape 2** : Renommage (Hostname)  
 Pour faciliter l'identification dans la topologie, modifiez le nom d'hôte sur chaque machine :
 
-```console
+```bash
 # Sur la machine Client
 sudo hostnamectl set-hostname Client-MPTCP
 
@@ -94,7 +94,7 @@ Déconnectez-vous et passez en console TTY (Ctrl+Alt+F3).
 
 Connectez-vous en tant que root et lancez les commandes suivantes :
 
-```console
+```bash
 # Exemple pour passer de 'user' à 'client'
 usermod -l client -d /home/client -m ancien_nom_utilisateur
 groupmod -n client ancien_nom_utilisateur
@@ -102,7 +102,7 @@ groupmod -n client ancien_nom_utilisateur
 ## 4. Vérification finale  
 Après avoir redémarré sur chaque machine avec le bon noyau, vérifiez que la pile MPTCP est bien active et reconnue par le système :
 
-```console
+```bash
 # Vérification des limites de subflows (doit renvoyer des valeurs numériques)
 ip mptcp limits show
 ```
