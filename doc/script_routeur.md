@@ -2,6 +2,12 @@
 
 echo "Configuration du routage sur le ROUTEUR..."
 
+# Nettoyage des règles existantes
+sudo ip rule flush
+sudo ip rule add from all lookup local pref 0
+sudo ip rule add from all lookup main pref 32766
+sudo ip rule add from all lookup default pref 32767
+
 # Réseaux côté client
 CLIENT_NETS=("10.0.1.0/24" "10.0.2.0/24" "10.0.3.0/24" "10.0.4.0/24")
 CLIENT_IFACES=("enp1s0" "enp8s0" "enp9s0" "enp10s0")
@@ -9,6 +15,9 @@ CLIENT_IFACES=("enp1s0" "enp8s0" "enp9s0" "enp10s0")
 # Réseaux côté serveur
 SERVER_NETS=("192.168.1.0/24" "192.168.2.0/24" "192.168.3.0/24" "192.168.4.0/24")
 SERVER_IFACES=("enp11s0" "enp12s0" "enp13s0" "enp14s0")
+
+# Activer le forwarding
+sudo sysctl -w net.ipv4.ip_forward=1
 
 echo "Ajout des routes CLIENT -> SERVEUR..."
 for i in {0..3}
