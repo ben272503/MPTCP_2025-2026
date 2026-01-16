@@ -13,22 +13,22 @@ network:
     # CHEMINS MPTCP (Côté client: 10.0.X.10)
     # ----------------------------------------------------
 
-    eth0:
+    enp7s0:
       addresses: [10.0.1.10/24]
       dhcp4: false
       routes: []
 
-    eth1:
+    enp8s0:
       addresses: [10.0.2.10/24]
       dhcp4: false
       routes: []
 
-    eth2:
+    enp9s0:
       addresses: [10.0.3.10/24]
       dhcp4: false
       routes: []
 
-    eth3:
+    enp10s0:
       addresses: [10.0.4.10/24]
       dhcp4: false
       routes: []
