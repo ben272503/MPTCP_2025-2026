@@ -53,7 +53,7 @@ Le routeur joue un rôle clé :
 Nous avons établi un état de l'art du MPTCP pour se renseigner sur ce qu'était cette technologie, ce qui existait comme application en particulier celles sur lesquelles nous allions travailler.
 
 Voici un résumé rapide de ce qu'est le MPTCP et ce qu'il permet de faire:
-Le MPTCP est une extension du protocole TCP traditionnel qui permet à deux hôtes de s'échanger des données en utilisant plusieurs chemins réseau simultanément au sein d'une seule et même connexion.
+C'est une extension du protocole TCP traditionnel qui permet à deux hôtes de s'échanger des données en utilisant plusieurs chemins réseau simultanément au sein d'une seule et même connexion.
 
 **Qu'est-ce que le Multi-path TCP ?**
 
