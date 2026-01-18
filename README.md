@@ -88,7 +88,7 @@ C'est une extension du protocole TCP traditionnel qui permet à deux hôtes de s
 
 ### 🔹 Expérimentations réseau
 
-* Échanges TCP classiques
+* Échanges TCP
 * Échanges MPTCP
 * Analyse comparative (latence, résilience, chemins multiples)
 
@@ -112,11 +112,11 @@ C'est une extension du protocole TCP traditionnel qui permet à deux hôtes de s
 
 ## 🛠️ Technologies & outils utilisés
 
-* **Linux** Ubuntu 22 LTS
-* **MPTCP**
-* **Machines virtuelles**
-* **eBPF**
-* **TCP/IP**
+* Linux Ubuntu 22 LTS
+* MPTCP
+* Machines virtuelles
+* eBPF
+* TCP/IP
 * Bash / scripts réseau
 * Outils de capture et d’analyse réseau (Wireshark...)
 
