@@ -57,7 +57,7 @@ C'est une extension du protocole TCP traditionnel qui permet à deux hôtes de s
 
 **Qu'est-ce que le Multi-path TCP ?**
 
-* Multi-chemins : Contrairement au TCP standard qui est limité à une seule interface, le MPTCP peut diviser un flux de données sur plusieurs interfaces réseau (Wi-Fi, 4G, ou plusieurs liens Ethernet). 
+* Multi-path : Contrairement au TCP standard qui est limité à une seule interface, le MPTCP peut diviser un flux de données sur plusieurs interfaces réseau (Wi-Fi, 4G, ou plusieurs liens Ethernet). 
 
 * Sous-flux (Subflows) : Il crée des connexions TCP individuelles sur chaque chemin disponible et les agrège pour l'application. 
 
