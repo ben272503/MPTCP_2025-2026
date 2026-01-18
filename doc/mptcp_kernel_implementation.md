@@ -2,7 +2,7 @@
 
 # Implémentation du Noyau MPTCP et Préparation des VMs (Ubuntu 22.04 LTS)
 
-Ce document décrit la procédure manuelle d'installation du noyau supportant le protocole MPTCP (MultiPath TCP), la configuration du chargeur de démarrage GRUB, ainsi que la personnalisation des machines virtuelles.
+Ce document décrit la procédure manuelle d'installation du noyau supportant le protocole MPTCP (MultiPath TCP), la configuration du bootloader GRUB, ainsi que la personnalisation des machines virtuelles.
 
 
 
