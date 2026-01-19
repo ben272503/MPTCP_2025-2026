@@ -4,6 +4,14 @@ Ce document détaille la configuration réseau permettant la communication multi
 ## 1. Architecture du Réseau
 Une table de routage classique est établie avec plusieurs routes statiques nous permettant d'être sur de quel chemins prennent les données et ainsi faire des opérations sur le réseau.
 
+
+| Interface | Client | Routeur | Serveur | Interface |
+| :--- | :--- | :--- | :--- | :--- |
+| **eth0** | 10.0.1.10 | 10.0.1.1 / 192.168.1.1 | 192.168.1.10 | **eth0** |
+| **eth1** | 10.0.2.10 | 10.0.2.1 / 192.168.2.1 | 192.168.2.10 | **eth1** |
+| **eth2** | 10.0.3.10 | 10.0.3.1 / 192.168.3.1 | 192.168.3.10 | **eth2** |
+| **eth3** | 10.0.4.10 | 10.0.4.1 / 192.168.4.1 | 192.168.4.10 | **eth3** |
+
 [📄 Ouvrir La topologie complete en PDF](Description_de_la_Topologie_Réseau_MPTCP.pdf)
 
 
