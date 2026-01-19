@@ -113,7 +113,7 @@ On applique des scripts pour faire la configuration des routes statiques spécif
 
 Sur le client, faire `ping 192.168.1.10` 
 
-dans le routage actuel, le client peut ping le routeur, mais le routeur dois forcer avec `ping -I 192.168.1.10 10.0.1.10` car il n'a pas de route par défaut pour ping le client, il sais juste répondre
+Dans le routage actuel, le client peut ping le routeur, mais le routeur dois forcer avec `ping -I 192.168.1.10 10.0.1.10` car il n'a pas de route par défaut pour ping le client, il sais juste répondre
 
 **Vérification MPTCP**
 
