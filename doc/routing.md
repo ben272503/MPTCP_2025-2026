@@ -126,9 +126,6 @@ Dans le routage actuel, le client peut ping le routeur, mais le routeur dois for
 
 on peut ajouter nos routes à la main si on le souhaite
 
-**Vérification MPTCP**
-
-Utiliser `ip mptcp endpoint show` pour voir si les interfaces sont bien enregistrées
 
 **Tester les multi-path exemple (optionnel, puisque prochaines étapes du projet):**
 
