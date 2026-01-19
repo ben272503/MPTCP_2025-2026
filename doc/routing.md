@@ -107,9 +107,9 @@ Sur le client, faire `ping 192.168.1.10`
 
 **Vérification MPTCP**
 
-utiliser `ip mptcp endpoint show` pour voir si les interfaces sont bien enregistrées
+Utiliser `ip mptcp endpoint show` pour voir si les interfaces sont bien enregistrées
 
-**Tester les multi-chemins exemple (optionnel, puisque prochaines étapes du projet):**
+**Tester les multi-path exemple (optionnel, puisque prochaines étapes du projet):**
 
  1- Installer `mptcpize` ou utiliser `iperf3` pour .
  2- Lancer un transfert et vérifiez avec nload ou iftop sur le routeur si les 4 interfaces reçoivent du trafic simultanément.
