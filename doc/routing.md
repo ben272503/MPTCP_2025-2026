@@ -114,6 +114,14 @@ On applique des scripts pour faire la configuration des routes statiques spécif
 Sur le client, faire `ping 192.168.1.10` 
 
 Dans le routage actuel, le client peut ping le routeur, mais le routeur dois forcer avec `ping -I 192.168.1.10 10.0.1.10` car il n'a pas de route par défaut pour ping le client, il sais juste répondre
+si on veut ajouter on peut faire quelque chose comme :
+
+```bash
+ip route add 10.0.1.0/24 via 192.168.1.1 dev enp7s0
+ip route add 10.0.2.0/24 via 192.168.2.1 dev enp8s0
+ip route add 10.0.3.0/24 via 192.168.3.1 dev enp9s0
+ip route add 10.0.4.0/24 via 192.168.4.1 dev enp10s0
+```
 
 **Vérification MPTCP**
 
