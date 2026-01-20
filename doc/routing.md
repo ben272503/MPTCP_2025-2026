@@ -124,6 +124,8 @@ Sur le client, faire `ping 192.168.1.10`
 
 Dans le routage actuel, le client peut ping le routeur, mais le routeur dois forcer avec `ping -I 192.168.1.10 10.0.1.10` car il n'a pas de route par défaut pour ping le client, il sais juste répondre.
 
+Ses adresses sont visibles dans `ip route`
+
 on peut ajouter nos routes à la main si on le souhaite
 
 
