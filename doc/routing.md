@@ -135,13 +135,6 @@ sudo ip route add 10.0.4.0/24 via 192.168.4.1 dev enp4s0
 
 Sur le client, faire `ping 192.168.1.10` 
 
-Dans le routage actuel, le client peut ping le routeur, mais le routeur dois forcer avec `ping -I 192.168.1.10 10.0.1.10` car il n'a pas de route par défaut pour ping le client, il sais juste répondre.
-
-Ses adresses sont visibles dans `ip route`
-
-on peut ajouter nos routes à la main si on le souhaite
-
-
 **Tester les multi-path exemple (optionnel, puisque prochaines étapes du projet):**
 
  1- Installer `mptcpize` ou utiliser `iperf3` pour .
