@@ -105,6 +105,8 @@ Pour que le routeur fasse sont travail de **'pont'** entre les deux machines, il
 sudo sysctl -w net.ipv4.ip_forward=1
 # pour le rendre permanent:
 echo "net.ipv4.ip_forward=1" | sudo tee /etc/sysctl.d/99-mptcp.conf
+#recharger la configuration
+sudo sysctl --system
 ```
 ___
 ## 2- Application de script de routage sur client et serveur
