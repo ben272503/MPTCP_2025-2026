@@ -1,0 +1,80 @@
+🟩 2. Lancer un échange MPTCP simple (route 1)
+Sur le serveur
+Code
+nc -l -p 5000 -s 192.168.1.10
+Sur le client
+Code
+nc -s 10.0.1.10 192.168.1.10 5000
+Tape du texte → il doit apparaître côté serveur.
+
+👉 Ceci crée le premier subflow MPTCP (MP_CAPABLE).
+
+🟧 3. Lancer les subflows supplémentaires
+Ton kernel 4.19 MPTCP utilise fullmesh → il va automatiquement essayer de créer des subflows supplémentaires.
+
+Pour les forcer proprement, ouvre 3 autres terminaux sur le client :
+
+Subflow route 2
+Code
+nc -s 10.0.2.10 192.168.2.10 5000
+Subflow route 3
+Code
+nc -s 10.0.3.10 192.168.3.10 5000
+Subflow route 4
+Code
+nc -s 10.0.4.10 192.168.4.10 5000
+Tu n’as pas besoin de taper du texte :
+le simple SYN suffit pour créer un MP_JOIN.
+
+🟪 4. Voir les subflows dans Wireshark (routeur)
+Dans Wireshark :
+
+Filtre :
+Code
+tcp.option_kind == 30
+Ajoute la colonne “Interface” :
+Right click → Column Preferences → Add
+
+Field : frame.interface_name
+
+Tu vas voir :
+
+MP_CAPABLE sur route 1
+
+MP_JOIN sur route 2
+
+MP_JOIN sur route 3
+
+MP_JOIN sur route 4
+
+Avec les interfaces :
+
+Subflow	Interface entrée	Interface sortie
+Route 1	enp1s0	enp11s0
+Route 2	enp8s0	enp12s0
+Route 3	enp9s0	enp13s0
+Route 4	enp10s0	enp14s0
+🟫 5. Vérifier les subflows côté serveur ou client
+Code
+ss -M
+ou :
+
+Code
+cat /proc/net/mptcp_net/mptcp
+Tu dois voir 4 lignes, une par subflow.
+
+🟩 Résultat attendu
+Dans Wireshark, tu verras :
+
+MP_CAPABLE (connexion principale)
+
+MP_JOIN (subflows supplémentaires)
+
+DSS (mapping des données)
+
+HMAC, nonce, token
+
+Et tu pourras dire dans ton TP :
+
+“Chaque subflow MPTCP correspond à un chemin physique distinct entre client et serveur.
+Le routeur montre clairement les interfaces utilisées pour chaque sous-flux.”
