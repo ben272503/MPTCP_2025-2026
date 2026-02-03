@@ -137,8 +137,9 @@ Sur le client, faire `ping 192.168.1.10`
 
 **Tester les multi-path exemple (optionnel, puisque prochaines étapes du projet):**
 
- 1- Installer `mptcpize` ou utiliser `iperf3` pour .
- 2- Lancer un transfert et vérifiez avec nload ou iftop sur le routeur si les 4 interfaces reçoivent du trafic simultanément.
+ 1- Installer `mptcpize` ou utiliser `iperf3` pour faire les echanges
+ 
+ 2- Lancer un transfert et vérifiez avec `nload` ou `iftop` sur le routeur si les 4 interfaces reçoivent du trafic simultanément.
 
 [⮌ Retour au Readme général](../README.md)
 
