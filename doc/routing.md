@@ -109,14 +109,27 @@ echo "net.ipv4.ip_forward=1" | sudo tee /etc/sysctl.d/99-mptcp.conf
 sudo sysctl --system
 ```
 ___
-## 2- Application de script de routage sur client et serveur
+## 2- Application de commande de routage sur client et serveur
 
-On applique des scripts pour faire la configuration des routes statiques spécifiant quel routes sont utilisables.
+On applique des scripts pour faire la configuration des routes statiques spécifiant quel routes sont utilisables. (adapter à votre configuration)
 
-* **Client :** [`script client`](./script_client.md)
-* **Serveur :** [`script serveur`](./script_serveur.md)
-* **Routeur :** [`script routeur`](./script_routeur.md)
-
+* **Client :** 
+```bash
+sudo ip route add 192.168.1.0/24 via 10.0.1.1 dev enp7s0
+sudo ip route add 192.168.2.0/24 via 10.0.2.1 dev enp8s0
+sudo ip route add 192.168.3.0/24 via 10.0.3.1 dev enp9s0
+sudo ip route add 192.168.4.0/24 via 10.0.4.1 dev enp10s0
+```
+* **Serveur :**
+```bash
+sudo ip route add 10.0.1.0/24 via 192.168.1.1 dev enp1s0
+sudo ip route add 10.0.2.0/24 via 192.168.2.1 dev enp2s0
+sudo ip route add 10.0.3.0/24 via 192.168.3.1 dev enp3s0
+sudo ip route add 10.0.4.0/24 via 192.168.4.1 dev enp4s0
+```
+* **Routeur :**
+```bash
+```
 
 ## *Vérification:*
 
